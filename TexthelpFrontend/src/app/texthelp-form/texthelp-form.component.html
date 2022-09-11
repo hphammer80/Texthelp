@@ -1,0 +1,26 @@
+<div class="left-content">
+    <span class="head">Select locale</span>
+    <ul class="rbList"> 
+        <li *ngFor='let item of locales;let i = index'>                   
+            <input type="radio" [checked]="item.selected" (change)='radioChecked(item.name)' > 
+            <label>{{item.name}}</label>  
+        </li>                     
+    </ul>
+    <div class="textAreaWrapper">
+        <textarea class="textArea" placeholder="Enter text here" (keypress)="textareaKeyPressed()" [(ngModel)] = "text"></textarea>
+    </div>
+</div>
+<div class="right-content">
+    <div class="wsListWrapper">
+        <span class="head">Results from word prediction web service</span>
+        <div *ngFor="let item of result.wordPredictions" class="list">
+            <label (click)="listClick(item)">{{item}}</label>
+        </div>
+    </div>
+    <div class="dbListWrapper">
+        <span class="head">Results from dictionary database</span>
+        <div *ngFor="let item of result.dictionaryItems" class="list">
+            <label (click)="listClick(item)">{{item}}</label>
+        </div>
+    </div>
+</div>

@@ -32,6 +32,7 @@ export class TexthelpFormComponent implements OnInit {
 
   textareaKeyPressed(){
     let selectedLocale = this.getSelectedLocale();
+    console.log(this.text);
     let params = new HttpParams({fromObject: { locale: selectedLocale, text: this.text }});
     this.http.get<WordPredictionsResults>(this.baseUrl, {params: params}).subscribe(result => {
       this.result = result;

@@ -7,7 +7,7 @@
         </li>                     
     </ul>
     <div class="textAreaWrapper">
-        <textarea class="textArea" placeholder="Enter text here" (keypress)="textareaKeyPressed()" [(ngModel)] = "text"></textarea>
+        <textarea class="textArea" placeholder="Enter text here" (keyup)="textareaKeyPressed()" [(ngModel)] = "text"></textarea>
     </div>
 </div>
 <div class="right-content">
